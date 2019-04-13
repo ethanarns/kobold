@@ -2,7 +2,7 @@ import React from 'react';
 import {
   ScrollView,
   StyleSheet,
-  Text
+  Alert
 } from 'react-native';
 import Spells from '../assets/spells'
 import SpellItem from '../components/SpellItem'
@@ -22,7 +22,13 @@ export default class SpellsScreen extends React.Component {
   render() {
     const spellUl = this.state.filterSpells.map((spell) => {
       return (
-        <SpellItem key={spell['name']} spellInfo={spell}/>
+        <SpellItem
+          key={spell['name']}
+          spellInfo={spell}
+          navCall={(n) => {
+            this.props.navigation.navigate("HomeStack");
+          }}
+        />
       )
     });
     return (

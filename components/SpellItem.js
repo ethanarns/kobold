@@ -2,10 +2,17 @@ import React from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  Button,
+  TouchableHighlight,
+  Alert
 } from 'react-native';
 
 export default class SpellItem extends React.Component {
+  _testclick(s) {
+    Alert.alert(s.name);
+  }
+
   render() {
     const spellData = {};
     if (this.props.spellInfo.level <= 0) {
@@ -15,8 +22,15 @@ export default class SpellItem extends React.Component {
     }
     return (
       <View style={styles.fullbox}>
-        <Text style={{margin: 0, color: 'rgba(0,0,0,0.9)'}}>{this.props.spellInfo.name}</Text>
-        <Text style={{margin: 0, color: 'rgba(0,0,0,0.5)'}}>{spellData.subtitle}</Text>
+        <TouchableHighlight
+          onPress={() => this.props.navCall(this.props.spellInfo.name)}
+          underlayColor="#CCC"
+        >
+          <View>
+            <Text style={{margin: 0, color: 'rgba(0,0,0,0.9)'}}>{this.props.spellInfo.name}</Text>
+            <Text style={{margin: 0, color: 'rgba(0,0,0,0.5)'}}>{spellData.subtitle}</Text>
+          </View>
+        </TouchableHighlight>
       </View>
     )
   }
