@@ -7,10 +7,10 @@ import {
 } from 'react-navigation';
 import { Platform } from 'react-native';
 
-import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import SpellsScreen from '../screens/SpellsScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import TabBarIcon from './components/TabBarIcon';
+import HomeScreen from './screens/HomeScreen';
+import SpellsScreen from './screens/SpellsScreen';
+import SettingsScreen from './screens/SettingsScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
